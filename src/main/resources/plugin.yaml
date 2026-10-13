@@ -1,0 +1,24 @@
+# Refer https://docs.halo.run/developer-guide/plugin/basics/manifest
+# 两点注意：
+#   1. metadata.name 只能是「小写字母 / 数字 / 连字符」，所以这里是小写的 halo-plugin-x，
+#      与 GitHub 仓库名 halo-plugin-X 的大小写不同，这是允许的。
+#   2. spec.version 由官方 Gradle 插件在构建时自动写入，源文件里不要手写。
+#   3. 不配 settingName：文档明确说配了却没有对应的 Setting 资源，插件会起不来。
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  name: halo-plugin-x
+spec:
+  requires: ">=2.26.0"
+  author:
+    name: Ander.
+    website: https://github.com/IFIAnder
+  logo: logo.svg
+  homepage: https://github.com/IFIAnder/halo-plugin-X#readme
+  repo: https://github.com/IFIAnder/halo-plugin-X
+  issues: https://github.com/IFIAnder/halo-plugin-X/issues
+  displayName: "X 主题扩展"
+  description: "为 X 主题（halo-theme-X）提供个人主页背景图、位置与个人网站的自助设置。主题不依赖本插件，只是没有它时这些字段无法在站内修改。"
+  license:
+    - name: "MIT"
+      url: "https://github.com/IFIAnder/halo-plugin-X/blob/main/LICENSE"
